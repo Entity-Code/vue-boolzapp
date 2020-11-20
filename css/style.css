@@ -42,7 +42,7 @@
       flex-flow: row nowrap;
       justify-content:flex-start;
       width: 75vw;
-      min-width: 900px;
+      min-width: 1100px;
       max-width: 1145px;
       height: 95vh;
       max-height: 700px;
@@ -70,31 +70,26 @@
          flex-flow: column nowrap;
          justify-content: flex-start;
       }
-         .left-top{
-            /* debug */
-            min-height: 20px;
-            background-color: green;
-            /* debug */
-         }
+
             .l-one{background-color: #eaeaea; min-height: 60px;}
             .l-two{background-color: #76dcff; min-height: 65px}
             .l-three{background-color: #ffffff; min-height: 50px; border-bottom: 1px solid black}
 
 
       /* parte scorribile (contatti) */
-      .cont-left-bot{
-         height: calc(100% - 175px);
-         background-color: white;
-         overflow-y: auto;
-      }
-         .left-bot{
-            height: 60px;
+         .cont-left-bot{
+            height: calc(100% - 175px);
             background-color: white;
+            overflow-y: auto;
          }
-            .r-one{border-bottom: 1px solid #eaeaea;}
-            .r-two{border-bottom: 1px solid #eaeaea;}
-            .r-three{border-bottom: 1px solid #eaeaea;}
-            .r-four{border-bottom: 1px solid #eaeaea;}
+            .left-bot{
+               height: 60px;
+               background-color: white;
+            }
+               .r-one{border-bottom: 1px solid #eaeaea;}
+               .r-two{border-bottom: 1px solid #eaeaea;}
+               .r-three{border-bottom: 1px solid #eaeaea;}
+               .r-four{border-bottom: 1px solid #eaeaea;}
    /* left/contatti */
 
 
@@ -127,8 +122,8 @@
          /* msg inviato */
             .msg-ricevuto{
                position: relative;
-               min-width: 150px;
-               max-width: 200px;
+               min-width: 225px;
+               max-width: 250px;
                background-color: gray;
                word-wrap: break-word;
                align-self: flex-start;
@@ -142,8 +137,8 @@
          /* msg ricevuto */
             .msg-inviato{
                position: relative;
-               min-width: 150px;
-               max-width: 200px;
+               min-width: 225px;
+               max-width: 250px;
                background-color: #cbfbb3;
                word-wrap: break-word;
                align-self: flex-end;
