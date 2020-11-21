@@ -8,13 +8,24 @@
    }
    html{overflow:hidden;}
    img{width: 100%; height: auto;}
+
    /* img size */
-   .img1{
-      height: 60px; width: 60px; border-radius: 50%; padding-bottom: 5px; padding-left: 5px;
+   .img1 {
+      height: 60px;
+      width: 60px;
+      border-radius: 50%;
+      padding-bottom: 5px;
+      padding-left: 5px;
    }
    .img2{border-radius: 50%;}
    /* icons details */
-   .icons{color: #b3b3b3; font-size: 22.5px; align-self: center; padding: 0 10px; cursor:pointer;}
+   .icons {
+      color: #b3b3b3;
+      font-size: 22.5px;
+      align-self: center;
+      padding: 0 10px;
+      cursor:pointer;
+   }
    /* contatto selezionato */
    .selezionato{background-color: #e9ebeb;}
 
@@ -193,7 +204,6 @@
 
 
 
-
    /* right/chat */
       .container-right{
          width: 65%;
@@ -232,8 +242,6 @@
 
             /* container right / icons */
             .icons-right{display: flex;flex-flow: row nowrap;}
-
-
 
 
       /* chat centrale messaggi/center */
