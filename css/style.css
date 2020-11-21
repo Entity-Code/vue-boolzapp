@@ -6,9 +6,17 @@
       font-family: 'Lato';
       outline: none;
    }
-   html{
-      overflow:hidden;
+   html{overflow:hidden;}
+   img{width: 100%; height: auto;}
+   /* img size */
+   .img1{
+      height: 60px; width: 60px; border-radius: 50%; padding-bottom: 5px; padding-left: 5px;
    }
+   .img2{border-radius: 50%;}
+   /* icons details */
+   .icons{color: #b3b3b3; font-size: 22.5px; align-self: center; padding: 0 12.5px; cursor:pointer;}
+
+
 /* background */
    .background-container{
       width: 100vw;
@@ -63,27 +71,24 @@
    }
       /* parte fissa top*/
       .cont-left-top{
-         /* debug */
-         min-height: 100px;
-         /* debug */
          display: flex;
          flex-flow: column nowrap;
          justify-content: flex-start;
       }
 
-            .l-one{background-color: #eaeaea; min-height: 60px;}
-            .l-two{background-color: #76dcff; min-height: 65px}
-            .l-three{background-color: #ffffff; min-height: 50px; border-bottom: 1px solid black}
+         .l-one{background-color: #eaeaea; min-height: 70px;}
+         .l-two{background-color: #76dcff; min-height: 75px}
+         .l-three{background-color: #ffffff; min-height: 55px; border-bottom: 1px solid black}
 
 
       /* parte scorribile (contatti) */
          .cont-left-bot{
-            height: calc(100% - 175px);
+            height: calc(100% - 200px);
             background-color: white;
             overflow-y: auto;
          }
             .left-bot{
-               height: 60px;
+               height: 75px;
                background-color: white;
             }
                .r-one{border-bottom: 1px solid #eaeaea;}
@@ -105,15 +110,49 @@
       }
       /* contatto selezionato/top */
          .cont-right-top{
-            height: 60px;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            height: 70px;
             background-color: #eaeaea;
+            padding: 7.5px 10px;
          }
+
+            /* container left/ icona, nome e ultimo accesso */
+            .icon-name-left{
+               display: flex;
+               flex-flow: row nowrap;
+               justify-content: space-around;
+               cursor: pointer;
+            }
+               /* container nome/ultimo accesso */
+               .name-left{
+                  padding: 10px 15px;
+               }
+                  /* nome */
+                  .name-left > h5{
+
+                     font-size: 16px;
+                  }
+                  /* ultimo accesso */
+                  .name-left > p{
+                     font-size: 14px;
+                     color: gray;
+                     padding-top: 2.5px;
+                  }
+
+            /* container right / icons */
+            .icons-right{
+               display: flex;
+               flex-flow: row nowrap;
+            }
+
 
 
 
       /* chat centrale messaggi/center */
          .cont-right-center{
-            height: calc(100% - 120px);
+            height: calc(100% - 140px);
             padding: 30px 65px;
             display: flex;
             flex-flow: column nowrap;
@@ -159,8 +198,38 @@
 
       /* scrivi messaggio/bottom */
          .cont-right-bot{
-            height: 60px;
+            height: 70px;
             background-color: #f4eee9;
+            padding: 7.5px 10px;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-around;
          }
+            /* 1° smile/emoticons */
+            .cont-right-bot > i:first-child,
+            /* 3° microphone/ messaggio vocale */
+            .cont-right-bot > i:last-child{
+               font-size: 22.5px;
+               color: gray;
+               cursor: pointer;
+               align-self: center;
+            }
+
+            /*2° text area/scrivi messaggio */
+            .write-msg::placeholder{color: lightgray;}
+            .cont-right-bot > .write-msg{
+               width: 85%;
+               font-size: 17.5px;
+               border: none;
+               border-radius: 5px;
+               padding: 10px 17.5px;
+               margin: 4px 0;
+               color: gray;
+            }
+
+
+
+
+
    /* right/chat */
 /* fine total-container app */
