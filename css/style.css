@@ -14,7 +14,9 @@
    }
    .img2{border-radius: 50%;}
    /* icons details */
-   .icons{color: #b3b3b3; font-size: 22.5px; align-self: center; padding: 0 12.5px; cursor:pointer;}
+   .icons{color: #b3b3b3; font-size: 22.5px; align-self: center; padding: 0 10px; cursor:pointer;}
+   /* contatto selezionato */
+   .selezionato{background-color: #e9ebeb;}
 
 
 /* background */
@@ -55,7 +57,6 @@
       height: 95vh;
       max-height: 700px;
       background-image: url(../img/mine.jpg);
-
    }
 /* total container */
 
@@ -73,13 +74,86 @@
       .cont-left-top{
          display: flex;
          flex-flow: column nowrap;
-         justify-content: flex-start;
+         justify-content: space-between;
       }
 
+         .left-top{
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+         }
+         /* 1° */
          .l-one{background-color: #eaeaea; min-height: 70px;}
-         .l-two{background-color: #76dcff; min-height: 75px}
-         .l-three{background-color: #ffffff; min-height: 55px; border-bottom: 1px solid black}
+            /* left / icon nome */
+            .icon-name-main{
+               display: flex;
+               flex-flow: row nowrap;
+               justify-content: space-between;
+               cursor: pointer;
+            }
+               .icon-name-main > img{
+                  align-self: center;
+                  margin: 0 10px ;
+                  padding-top: 3px;
+                  padding-bottom: 2px;
+               }
+               .icon-name-main > h5{
+                  align-self: center;
+                  font-size: 17px;
+                  font-weight: bolder;
+               }
+            /* right/ icons    */
+            .icons-main{
+               display: flex;
+               flex-flow: row wrap;
+               justify-content: center;
+               cursor: pointer;
+            }
 
+
+         /* 2° */
+         .l-two{background-color: #76dcff;
+               min-height: 75px;
+               display: flex;
+               flex-flow: row nowrap;
+               justify-content: flex-start;
+            }
+         /* notifica icon */
+         .l-two > i{
+            color: #76dcff;
+            padding: 16px 13.5px;
+            font-size: 21px;
+            background-color: white;
+            border-radius: 50%;
+            align-self: center;
+            margin-left: 15px;
+         }
+         /* container notifica msg */
+         .notifiche-msg{
+            padding: 17.5px 14px;
+            word-break: normal;
+         }
+            /* msg notifiche push*/
+            .notifiche-msg > h4{font-size: 15px;}
+            .notifiche-msg > a{font-size: 12.5px; color: #4f8da4;}
+
+
+         /* 3° */
+         .l-three{background-color: #f5f5f5; min-height: 55px; padding: 9px;}
+
+            /* input container */
+            .search-chat-cont{
+               width: 100%;
+               border-radius: 3px;
+               background-color: #ffffff;
+               display: flex;
+               flex-flow: row nowrap;
+            }
+               /* icon search */
+               .search-chat-cont > i{font-size: 18px; margin: 0 10px;}
+               /* input */
+               .search-chat::placeholder{color:lightgray; padding-left: 15px;}
+               .search-chat{border: none; width: 100%;}
 
       /* parte scorribile (contatti) */
          .cont-left-bot{
@@ -88,13 +162,33 @@
             overflow-y: auto;
          }
             .left-bot{
+               display: flex;
+               flex-flow: row nowrap;
+               justify-content: flex-start;
+               position: relative;
+               cursor: pointer;
                height: 75px;
-               background-color: white;
+               border-bottom: 1px solid #eaeaea;
+               transition: 0.40s;
             }
-               .r-one{border-bottom: 1px solid #eaeaea;}
-               .r-two{border-bottom: 1px solid #eaeaea;}
-               .r-three{border-bottom: 1px solid #eaeaea;}
-               .r-four{border-bottom: 1px solid #eaeaea;}
+            .left-bot:hover{background-color: #e9ebeb;}
+               .left-bot > img, .name-left {align-self: center;}
+               .left-bot{padding-left: 15px; padding-top: 5px;}
+               .name-left > span {font-size: 14px; color: lightgray;}
+                  /* bordi */
+                  .r-one{border-bottom: 1px solid #eaeaea; }
+                  .r-two{border-bottom: 1px solid #eaeaea;}
+                  .r-three{border-bottom: 1px solid #eaeaea;}
+                  .r-four{border-bottom: 1px solid #eaeaea;}
+
+               /* ultimo accesso */
+               .accesso{
+                  position: absolute;
+                  top: 10px;
+                  right: 10px;
+                  font-size: 12px;
+                  color: lightgray;
+               }
    /* left/contatti */
 
 
@@ -126,14 +220,9 @@
                cursor: pointer;
             }
                /* container nome/ultimo accesso */
-               .name-left{
-                  padding: 10px 15px;
-               }
+               .name-left{padding: 10px 15px;}
                   /* nome */
-                  .name-left > h5{
-
-                     font-size: 16px;
-                  }
+                  .name-left > h5{font-size: 16px;}
                   /* ultimo accesso */
                   .name-left > p{
                      font-size: 14px;
@@ -142,10 +231,7 @@
                   }
 
             /* container right / icons */
-            .icons-right{
-               display: flex;
-               flex-flow: row nowrap;
-            }
+            .icons-right{display: flex;flex-flow: row nowrap;}
 
 
 
@@ -226,10 +312,20 @@
                margin: 4px 0;
                color: gray;
             }
-
-
-
-
-
    /* right/chat */
 /* fine total-container app */
+
+
+
+/* media query */
+
+@media screen and (max-width: 1120px) {
+   .container-left{width: 25%;}
+   .total-container {min-width: calc(1100px - 20%);}
+   .container-right{width: 75%;}
+   .notifiche-msg{padding: 10px 14px;}
+   .search-chat::placeholder{padding-left: 0;}
+   .search-chat-cont > i {margin: 0;}
+   .accesso{position: absolute; top: 3px; right: 5px;}
+   .name-left{padding-left: 5px;}
+}
