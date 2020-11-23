@@ -209,7 +209,7 @@
          width: 65%;
          min-width: 400px;
          display: flex;
-         flex-flow: column wrap;
+         flex-flow: column nowrap;
          justify-content: space-between;
       }
       /* contatto selezionato/top */
@@ -341,4 +341,5 @@
    .search-chat-cont > i {margin: 0;}
    .accesso{position: absolute; top: 3px; right: 5px;}
    .name-left{padding-left: 5px;}
+   .name-left > div{width: 100px;}
 }
