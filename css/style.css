@@ -88,7 +88,7 @@
          justify-content: space-between;
       }
 
-         .left-top{ 
+         .left-top{
             display: flex;
             flex-flow: row nowrap;
             justify-content: space-between;
@@ -234,10 +234,15 @@
                   /* nome */
                   .name-left > h5{font-size: 16px;}
                   /* ultimo accesso */
-                  .name-left > p{
+                  .name-left > div{
                      font-size: 14px;
                      color: gray;
                      padding-top: 2.5px;
+                     width: 200px;
+                     height: 42px;
+                     overflow: hidden;
+                     text-overflow: ellipsis;
+                     white-space: nowrap;
                   }
 
             /* container right / icons */
