@@ -94,10 +94,10 @@
                <header class="cont-right-top">
                   <!-- container left -->
                   <div class="icon-name-left">
-                     <img class="img1" src="img/avatar_3.jpg" >
+                     <img class="img1" :src="contacts[chatAttiva].img" >
                      <div class="name-left">
-                        <h5>Gianluigi</h5>
-                        <p>Ultimo accesso oggi alle 12:01</p>
+                        <h5>{{contacts[chatAttiva].nome}}</h5>
+                        <p>Ultimo accesso oggi alle {{contacts[chatAttiva].messaggi[contacts[chatAttiva].messaggi.length - 1].data}}</p>
                      </div>
                   </div>
 
@@ -111,17 +111,12 @@
                </header>
                <!-- chat -->
 <!------------><main class="cont-right-center">
-                  <div class="msg-inviato" v-for="(contact, index) in contacts[chatAttiva].messaggi">
-                     <!-- data/orario msg -->
-                     {{contacts[chatAttiva].messaggi[0].testo}}
-                     <span class="data-ora">{{contacts[chatAttiva].messaggi[0].data}}</span>
-                  </div>
-                  <div class="msg-ricevuto" v-for="(contact, index) in contacts[chatAttiva].messaggi">
-                     {{contacts[chatAttiva].messaggi[1].testo}}
-                     <span class="data-ora">{{contacts[chatAttiva].messaggi[1].data}}</span>
-                  </div>
 
-
+                  <div v-for="(contact, index) in contacts[chatAttiva].messaggi" :class="contact.mioMessaggio ? 'msg-inviato' : 'msg-ricevuto'">
+                  <!-- data/orario msg -->
+                  {{contact.testo}}
+                  <span class="data-ora">{{contact.data}}</span>
+                  </div>
 
                </main>
 
