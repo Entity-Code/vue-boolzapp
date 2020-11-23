@@ -63,48 +63,16 @@
                <!-- parte scorribile (contatti) -->
 <!------------><div class="cont-left-bot">
                   <!-- contatto -->
-                  <div class="left-bot r-one selezionato">
-                     <img class="img1" src="img/avatar_3.jpg" >
+                  <div class="left-bot r-one" :class="mieClassi" v-for="(contact, index) in contacts" @click="selectProfile(index)">
+                     <img class="img1" :src="contacts[index].img" >
                      <div class="name-left">
-                        <h5>Gianlugi</h5>
-                        <div>Ciao, si ho portato il cane giù, ci vediamo domani allora ok ciao...</div>
+                        <h5>{{contacts[index].nome}}</h5>
+                        <div>{{contacts[index].msg}}</div>
                      </div>
                      <!-- ultimo accesso -->
                      <div class="accesso">21/11/2020 18:37</div>
                   </div>
 
-                  <!-- contatto -->
-                  <div class="left-bot r-two">
-                     <img class="img1" src="img/avatar_5.jpg" >
-                     <div class="name-left">
-                        <h5>Nicola</h5>
-                        <div>Ma hai visto i baffi di Luisa? Oddio !</div>
-                     </div>
-                     <!-- ultimo accesso -->
-                     <div class="accesso">21/11/2020 18:37</div>
-                  </div>
-
-                  <!-- contatto -->
-                  <div class="left-bot r-three">
-                     <img class="img1" src="img/avatar_6.jpg" >
-                     <div class="name-left">
-                        <h5>Martina</h5>
-                        <div>Mi aiuti a fare i compiti per favoreeeeee</div>
-                     </div>
-                     <!-- ultimo accesso -->
-                     <div class="accesso">21/11/2020 18:37</div>
-                  </div>
-
-                  <!-- contatto -->
-                  <div class="left-bot r-four">
-                     <img class="img1" src="img/avatar_7.jpg" >
-                     <div class="name-left">
-                        <h5>Alessandro</h5>
-                        <div>Ok 😺</div>
-                     </div>
-                     <!-- ultimo accesso -->
-                     <div class="accesso">21/11/2020 18:37</div>
-                  </div>
                </div>
             </div>
             <!-- LEFT -> contatti -->

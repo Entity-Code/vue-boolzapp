@@ -9,6 +9,23 @@
    html{overflow:hidden;}
    img{width: 100%; height: auto;}
 
+   /* classi js */
+   .dFlex{
+      display: flex;
+   }
+   .dBlock{
+      display: block;
+   }
+   .dNone{
+      display: none;
+   }
+
+   .selezionato{background-color: #e9ebeb;}
+   .nonSelezionato{background-color: #ffffff;}
+   /* classi js */
+
+
+
    /* img size */
    .img1 {
       height: 60px;
@@ -26,8 +43,7 @@
       padding: 0 10px;
       cursor:pointer;
    }
-   /* contatto selezionato */
-   .selezionato{background-color: #e9ebeb;}
+
 
 
 /* background */
