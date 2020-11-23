@@ -339,7 +339,7 @@
    .notifiche-msg{padding: 10px 14px;}
    .search-chat::placeholder{padding-left: 0;}
    .search-chat-cont > i {margin: 0;}
-   .accesso{position: absolute; top: 3px; right: 5px;}
-   .name-left{padding-left: 5px;}
+   .accesso{position: absolute; top: 2px; right: 4px;}
+   .name-left{padding-left: 5px; padding-top: 15px;}
    .name-left > div{width: 100px;}
 }
