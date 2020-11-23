@@ -74,7 +74,7 @@
                <!-- parte scorribile (contatti) -->
 <!------------><div class="cont-left-bot">
                   <!-- contatto -->
-                  <div class="left-bot r-one" v-for="(contact, index) in contacts" @click="cambiaChat(index)">
+                  <div class="left-bot r-one" v-for="(contact, index) in contacts" @click="cambiaChat(index)" :class="{selezionato: index === chatAttiva}">
                      <img class="img1" :src="contacts[index].img" >
                      <div class="name-left">
                         <h5>{{contacts[index].nome}}</h5>
