@@ -114,7 +114,7 @@
                   <div class="msg-inviato" v-for="(contact, index) in contacts[chatAttiva].messaggi">
                      <!-- data/orario msg -->
                      {{contacts[chatAttiva].messaggi[0].testo}}
-                     <span class="data-ora">{{contacts[0].messaggi.data}}</span>
+                     <span class="data-ora">{{contacts[chatAttiva].messaggi[0].data}}</span>
                   </div>
                   <div class="msg-ricevuto" v-for="(contact, index) in contacts[chatAttiva].messaggi">
                      {{contacts[chatAttiva].messaggi[1].testo}}
