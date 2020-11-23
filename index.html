@@ -60,10 +60,21 @@
                   </div>
                </div>
 
+
+
+
+
+
+
+
+
+
+
+
                <!-- parte scorribile (contatti) -->
 <!------------><div class="cont-left-bot">
                   <!-- contatto -->
-                  <div class="left-bot r-one" :class="mieClassi" v-for="(contact, index) in contacts" @click="selectProfile(index)">
+                  <div class="left-bot r-one" v-for="(contact, index) in contacts" @click="cambiaChat(index)">
                      <img class="img1" :src="contacts[index].img" >
                      <div class="name-left">
                         <h5>{{contacts[index].nome}}</h5>
@@ -80,7 +91,7 @@
             <!-- RIGHT -> chat -->
             <div class="container-right">
                <!-- contatto selezionato -->
-<!------------><header class="cont-right-top">
+               <header class="cont-right-top">
                   <!-- container left -->
                   <div class="icon-name-left">
                      <img class="img1" src="img/avatar_3.jpg" >
@@ -100,35 +111,32 @@
                </header>
                <!-- chat -->
 <!------------><main class="cont-right-center">
-                  <div class="msg-inviato">
+                  <div class="msg-inviato" v-for="(contact, index) in contacts[chatAttiva].messaggi">
                      <!-- data/orario msg -->
-                     ciaoiacaicaociao
-                     <span class="data-ora">20/11/2020 19:02</span>
+                     {{contacts[chatAttiva].messaggi[0].testo}}
+                     <span class="data-ora">{{contacts[0].messaggi.data}}</span>
                   </div>
-                  <div class="msg-ricevuto">
-                     heysdsaaaaawsdasdasadsadsadsaddfdfsfdsfdasdsadsadsadsada
-                     <span class="data-ora">20/11/2020 19:02</span>
-                  </div>
-                  <div class="msg-inviato">
-                     ciaooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
-                     <!-- data/orario msg -->
-                     <span class="data-ora">20/11/2020 19:02</span>
-                  </div>
-                  <div class="msg-inviato">
-                     ciaooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
-                     <!-- data/orario msg -->
-                     <span class="data-ora">20/11/2020 19:02</span>
-                  </div>
-                  <div class="msg-ricevuto">
-                     ok
-                     <span class="data-ora">20/11/2020 19:02</span>
-                  </div>
-                  <div class="msg-ricevuto">
-                     heysdsaaaaawsdasdasadsadsadsaddfdfsfdsfdasdsadsadsadsada
-                     <span class="data-ora">20/11/2020 19:02</span>
+                  <div class="msg-ricevuto" v-for="(contact, index) in contacts[chatAttiva].messaggi">
+                     {{contacts[chatAttiva].messaggi[1].testo}}
+                     <span class="data-ora">{{contacts[chatAttiva].messaggi[1].data}}</span>
                   </div>
 
+
+
                </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                <!-- scrivi messaggio -->
 <!------------><footer class="cont-right-bot">

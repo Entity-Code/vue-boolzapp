@@ -12,22 +12,39 @@ var app = new Vue({
 
    data: {
 
-      mieClassi: "nonSelezionato",
       // sx
+      chatAttiva: 0,
       contacts:[
          {
             nome: "Gianluigi",
             msg: "ok d'accor...",
             img:"img/avatar_3.jpg",
-            chat: [
+            messaggi: [
               {
-                testo: "ciaoInviato",
+                testo: "MIO MESSAGGIO ciao anna sono andata a fare la spesa a dopo ciao",
                 data: "23/11/2020 16:11:43",
+                mioMessaggio: true
               },
               {
-                testo: "ciaoRicevuto",
+                testo: "MESSAGGIO DEL BOT va bene allora ci sentiamo a dopo",
                 data: "23/11/2020 16:11:51",
-              }
+                mioMessaggio: false
+             },
+             {
+               testo: "MESSAGGIO DEL BOT va bene allora ci sentiamo a dopo",
+               data: "23/11/2020 16:11:51",
+               mioMessaggio: false
+             },
+             {
+               testo: "MESSAGGIO DEL BOT va bene allora ci sentiamo a dopo",
+               data: "23/11/2020 16:11:51",
+               mioMessaggio: false
+             },
+             {
+               testo: "MIO MESSAGGIO ciao anna sono andata a fare la spesa a dopo ciao",
+               data: "23/11/2020 16:11:43",
+               mioMessaggio: true
+             }
             ]
          },
 
@@ -36,14 +53,16 @@ var app = new Vue({
             nome: "Francesca",
             msg: "Va bene a d...",
             img:"img/avatar_4.jpg",
-            chat: [
+            messaggi: [
               {
-                testo: "ciaoInviato",
-                data: "23/11/2020 16:11:43",
+                testo: "MIO MESSAGGIO non mi è piaciuto il tuo comportamento ieri",
+                data: "26/10/2020 7:11:43",
+                mioMessaggio: true
               },
               {
-                testo: "ciaoRicevuto",
-                data: "23/11/2020 16:11:51",
+                testo: "MESSAGGIO DEL BOT ok",
+                data: "27/10/2020 11:14:52",
+                mioMessaggio: false
               }
             ]
          },
@@ -53,14 +72,16 @@ var app = new Vue({
             nome: "Luigi",
             msg: "Luisa? baff...",
             img:"img/avatar_5.jpg",
-            chat: [
+            messaggi: [
               {
-                testo: "ciaoInviato",
-                data: "23/11/2020 16:11:43",
+                testo: "MIO MESSAGGIO sei tornato a casa? fammi sapere",
+                data: "23/11/2020 17:11:43",
+                mioMessaggio: true
               },
               {
-                testo: "ciaoRicevuto",
-                data: "23/11/2020 16:11:51",
+                testo: "MESSAGGIO DEL BOT si sono tornata da poco, tu?",
+                data: "23/11/2020 18:11:51",
+                mioMessaggio: false
               }
             ]
          },
@@ -70,21 +91,25 @@ var app = new Vue({
             nome: "Mario",
             msg: "si ok ciao c...",
             img:"img/avatar_6.jpg",
-            chat: [
+            messaggi: [
               {
-                testo: "ciaoInviato",
-                data: "23/11/2020 16:11:43",
+                testo: "MIO MESSAGGIO papà mi compro il nuovo cellulare?",
+                data: "23/11/2020 10:34:21",
+                mioMessaggio: true
               },
               {
-                testo: "ciaoRicevuto",
-                data: "23/11/2020 16:11:51",
+                testo: "MESSAGGIO DEL BOT solo se te lo meriti",
+                data: "9/9/2020 10:32:43",
+                mioMessaggio: false
               }
             ]
          }
       ]
    },
 
-   // methods: {
-   //
-   // }
+   methods: {
+      cambiaChat: function(index) {
+        this.chatAttiva = index;
+      }
+   }
 });
