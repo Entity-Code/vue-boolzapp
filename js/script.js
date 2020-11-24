@@ -16,12 +16,9 @@ var app = new Vue({
          nome: "Mattia",
          img: "img/avatar_2.jpg"
       },
-
       // myMessage
       myMessage: "",
-
-
-      // sx
+      // sx contacts
       chatAttiva: 0,
       contacts:[
          {
@@ -29,32 +26,22 @@ var app = new Vue({
             msg: "ok d'accor...",
             img:"img/avatar_3.jpg",
             messaggi: [
-              {
-                testo: "MIO MESSAGGIO ciao anna sono andata a fare la spesa a dopo ciao",
-                data: "23/11/2020 16:11:43",
-                mioMessaggio: true
-              },
-             {
-                testo: "MESSAGGIO DEL BOT va bene allora ci sentiamo a dopo",
-                data: "23/11/2020 16:11:51",
-                mioMessaggio: false
-             },
-             {
-               testo: "MESSAGGIO DEL BOT va bene allora ci sentiamo a dopo",
+            {
+               testo: "ciao anna sono andata a fare la spesa a dopo ciao",
+               data: "23/11/2020 16:11:43",
+               mioMessaggio: true
+            },
+            {
+               testo: "va bene allora ci sentiamo a dopo",
                data: "23/11/2020 16:11:51",
                mioMessaggio: false
-             },
-             {
-               testo: "MESSAGGIO DEL BOT va bene allora ci sentiamo a dopo",
-               data: "23/11/2020 16:11:51",
-               mioMessaggio: false
-             },
-             {
-               testo: "MIO MESSAGGIO ciao anna sono andata a fare la spesa a dopo ciao",
+            },
+            {
+               testo: "ciao anna sono andata a fare la spesa a dopo ciao",
                data: "23/11/2020 16:11:43",
                mioMessaggio: true,
-            },
-            ]
+            }
+           ]
          },
 
 
@@ -63,27 +50,17 @@ var app = new Vue({
             msg: "Va bene a d...",
             img:"img/avatar_4.jpg",
             messaggi: [
-              {
-                testo: "MIO MESSAGGIO non mi è piaciuto il tuo comportamento ieri",
-                data: "26/10/2020 7:11:43",
-                mioMessaggio: true
-              },
-              {
-                testo: "MESSAGGIO DEL BOT ok",
-                data: "27/10/2020 11:14:52",
-                mioMessaggio: false
-              },
-              {
-                testo: "MESSAGGIO DEL BOT ok",
-                data: "27/10/2020 11:14:52",
-                mioMessaggio: false
-              },
-              {
-                testo: "MIO MESSAGGIO non mi è piaciuto il tuo comportamento ieri",
-                data: "26/10/2020 7:11:43",
-                mioMessaggio: true
-              }
-            ]
+            {
+               testo: "non mi è piaciuto il tuo comportamento ieri",
+               data: "26/10/2020 7:11:43",
+               mioMessaggio: true
+            },
+            {
+               testo: "ok",
+               data: "27/10/2020 11:14:52",
+               mioMessaggio: false
+            }
+           ]
          },
 
 
@@ -92,69 +69,37 @@ var app = new Vue({
             msg: "Luisa? baff...",
             img:"img/avatar_5.jpg",
             messaggi: [
-              {
-                testo: "MIO MESSAGGIO sei tornato a casa? fammi sapere",
-                data: "23/11/2020 17:11:43",
-                mioMessaggio: true
-              },
-              {
-                testo: "MESSAGGIO DEL BOT si sono tornata da poco, tu?",
-                data: "23/11/2020 18:11:51",
-                mioMessaggio: false
-              },
-              {
-                testo: "MIO MESSAGGIO sei tornato a casa? fammi sapere",
-                data: "23/11/2020 17:11:43",
-                mioMessaggio: true
-              },
-              {
-                testo: "MIO MESSAGGIO sei tornato a casa? fammi sapere",
-                data: "23/11/2020 17:11:43",
-                mioMessaggio: true
-              },
-              {
-                testo: "MESSAGGIO DEL BOT si sono tornata da poco, tu?",
-                data: "23/11/2020 18:11:51",
-                mioMessaggio: false
-              }
-            ]
-         },
+            {
+               testo: "sei tornato a casa? fammi sapere",
+               data: "23/11/2020 17:11:43",
+               mioMessaggio: false
+            },
 
+            {
+               testo: "si sono tornata da poco, tu?",
+               data: "23/11/2020 18:11:51",
+               mioMessaggio: true
+            }
+           ]
+         },
 
          {
             nome: "Mario",
             msg: "si ok ciao c...",
             img:"img/avatar_6.jpg",
             messaggi: [
-              {
-                testo: "MIO MESSAGGIO papà mi compro il nuovo cellulare?",
-                data: "23/11/2020 10:34:21",
-                mioMessaggio: true
-              },
-              {
-                testo: "MESSAGGIO DEL BOT solo se te lo meriti",
-                data: "9/9/2020 10:32:43",
-                mioMessaggio: false
-              },
-              {
-                testo: "MESSAGGIO DEL BOT solo se te lo meriti",
-                data: "9/9/2020 10:32:43",
-                mioMessaggio: false
-              },
-              {
-                testo: "MESSAGGIO DEL BOT solo se te lo meriti",
-                data: "9/9/2020 10:32:43",
-                mioMessaggio: false
-              },
-              {
-                testo: "MIO MESSAGGIO papà mi compro il nuovo cellulare?",
-                data: "23/11/2020 10:34:21",
-                mioMessaggio: true
-              }
-
-            ]
+            {
+               testo: "papà mi comprI il nuovo cellulare?",
+               data: "23/11/2020 10:34:21",
+               mioMessaggio: true
+            },
+            {
+               testo: "solo se te lo meriti",
+               data: "9/9/2020 10:32:43",
+               mioMessaggio: false
+            }
+           ]
          }
-
       ]
    },
 
@@ -164,19 +109,34 @@ var app = new Vue({
      },
 
       addMyMessage: function () {
-         // creo l'oggetto myMessage (messaggio inserito dall'utente)
+         if (this.myMessage != "") {
+            // creo l'oggetto myMessage (messaggio inserito dall'utente)
+            let myMessage = {
+               testo: this.myMessage,
+               data: "23/11/2020 16:11:43",
+               mioMessaggio: true
+            }
+
+            // vado in contacts/chat aperta in quel momento/ messaggi <- pusho il nuovo oggetto myMessage
+            this.contacts[this.chatAttiva].messaggi.push(myMessage);
+            //pulisco l'input dopo l'invio del messaggio
+            this.myMessage = "";
+
+            setTimeout(this.pageScroll, 1);
+            // dopo 1s attivo la risposta del bot automatica
+            setTimeout(this.addBotMessage, 1000);
+         }
+      },
+
+      addBotMessage: function () {
+         // oggetto risposta bot
          let myMessage = {
-            testo: this.myMessage,
+            testo: "ok",
             data: "23/11/2020 16:11:43",
-            mioMessaggio: true
+            mioMessaggio:false
          }
 
-         // vado in contacts/chat aperta in quel momento/ messaggi <- pusho il nuovo oggetto myMessage
          this.contacts[this.chatAttiva].messaggi.push(myMessage);
-         //pulisco l'input dopo l'invio del messaggio
-         this.myMessage = "";
       }
-
-
    }
 });
