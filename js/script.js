@@ -11,6 +11,15 @@ var app = new Vue({
    el: "#app",
 
    data: {
+      // main profile
+      user: {
+         nome: "Mattia",
+         img: "img/avatar_2.jpg"
+      },
+
+      // myMessage
+      myMessage: "",
+
 
       // sx
       chatAttiva: 0,
@@ -25,7 +34,7 @@ var app = new Vue({
                 data: "23/11/2020 16:11:43",
                 mioMessaggio: true
               },
-              {
+             {
                 testo: "MESSAGGIO DEL BOT va bene allora ci sentiamo a dopo",
                 data: "23/11/2020 16:11:51",
                 mioMessaggio: false
@@ -43,8 +52,8 @@ var app = new Vue({
              {
                testo: "MIO MESSAGGIO ciao anna sono andata a fare la spesa a dopo ciao",
                data: "23/11/2020 16:11:43",
-               mioMessaggio: true
-             }
+               mioMessaggio: true,
+            },
             ]
          },
 
@@ -142,14 +151,32 @@ var app = new Vue({
                 data: "23/11/2020 10:34:21",
                 mioMessaggio: true
               }
+
             ]
          }
+
       ]
    },
 
    methods: {
       cambiaChat: function(index) {
         this.chatAttiva = index;
+     },
+
+      addMyMessage: function () {
+         // creo l'oggetto myMessage (messaggio inserito dall'utente)
+         let myMessage = {
+            testo: this.myMessage,
+            data: "23/11/2020 16:11:43",
+            mioMessaggio: true
+         }
+
+         // vado in contacts/chat aperta in quel momento/ messaggi <- pusho il nuovo oggetto myMessage
+         this.contacts[this.chatAttiva].messaggi.push(myMessage);
+         //pulisco l'input dopo l'invio del messaggio
+         this.myMessage = "";
       }
+
+
    }
 });

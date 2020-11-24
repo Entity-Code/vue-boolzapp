@@ -9,23 +9,13 @@
    html{overflow:hidden;}
    img{width: 100%; height: auto;}
 
+
+   .selezionato{background-color: #e9ebeb;}
    /* classi js */
-   .dFlex{
-      display: flex;
-   }
-   .dBlock{
-      display: block;
-   }
+
    .dNone{
       display: none;
    }
-
-   .selezionato{background-color: #e9ebeb;}
-   .nonSelezionato{background-color: #ffffff;}
-   /* classi js */
-
-
-
    /* img size */
    .img1 {
       height: 60px;

@@ -29,8 +29,8 @@
                   <div class="left-top l-one">
                      <!-- left / icon nome -->
                      <div class="icon-name-main">
-                        <img class="img1" src="img/avatar_2.jpg">
-                        <h5>Mattia </h5>
+                        <img class="img1" :src="user.img">
+                        <h5> {{user.nome}}</h5>
                      </div>
 
                      <!-- right/ icons -->
@@ -112,23 +112,16 @@
                <!-- chat -->
 <!------------><main class="cont-right-center">
 
-                  <div v-for="(contact, index) in contacts[chatAttiva].messaggi" :class="contact.mioMessaggio ? 'msg-inviato' : 'msg-ricevuto'">
+                  <div v-for="(contact, index) in contacts[chatAttiva].messaggi" :class="contact.mioMessaggio == true ? 'msg-inviato' : 'msg-ricevuto'">
                   <!-- data/orario msg -->
                   {{contact.testo}}
                   <span class="data-ora">{{contact.data}}</span>
+
                   </div>
 
+
+
                </main>
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -136,8 +129,10 @@
                <!-- scrivi messaggio -->
 <!------------><footer class="cont-right-bot">
                   <i class="far fa-smile"></i>
-                  <input class="write-msg" type="text" placeholder="Scrivi un messaggio">
-                  <i class="fas fa-microphone"></i>
+
+                  <input v-on:keydown.13="addMyMessage" v-model="myMessage" class="write-msg" type="text" placeholder="Scrivi un messaggio">
+
+                  <i @click="addMyMessage" class="fas fa-microphone"></i>
                </footer>
             </div>
             <!-- RIGHT -> chat -->
