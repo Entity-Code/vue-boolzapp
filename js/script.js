@@ -11,6 +11,7 @@ var app = new Vue({
    el: "#app",
 
    data: {
+      currentTime: "",
       // main profile
       user: {
          nome: "Mattia",
@@ -113,7 +114,7 @@ var app = new Vue({
             // creo l'oggetto myMessage (messaggio inserito dall'utente)
             let myMessage = {
                testo: this.myMessage,
-               data: "23/11/2020 16:11:43",
+               data: dateTime,
                mioMessaggio: true
             }
 
@@ -132,11 +133,19 @@ var app = new Vue({
          // oggetto risposta bot
          let myMessage = {
             testo: "ok",
-            data: "23/11/2020 16:11:43",
+            data: dateTime,
             mioMessaggio:false
          }
 
          this.contacts[this.chatAttiva].messaggi.push(myMessage);
-      }
+
+
+      },
    }
 });
+
+// calcolo tempo corrente
+var today = new Date();
+var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+var dateTime = date+' '+time;
