@@ -107,6 +107,8 @@ var app = new Vue({
    methods: {
       cambiaChat: function(index) {
         this.chatAttiva = index;
+        //scroll down
+        setTimeout(this.pageScroll, 0);
      },
 
       addMyMessage: function () {
@@ -123,7 +125,8 @@ var app = new Vue({
             //pulisco l'input dopo l'invio del messaggio
             this.myMessage = "";
 
-            setTimeout(this.pageScroll, 1);
+            //scroll down
+            setTimeout(this.pageScroll, 0);
             // dopo 1s attivo la risposta del bot automatica
             setTimeout(this.addBotMessage, 1000);
          }
@@ -138,9 +141,14 @@ var app = new Vue({
          }
 
          this.contacts[this.chatAttiva].messaggi.push(myMessage);
-
-
+         //scroll down
+         setTimeout(this.pageScroll, 0);
       },
+
+      // mantenimento dello scroll in basso
+      pageScroll: function() {
+        this.$refs.pageScroll.scrollTop = this.$refs.pageScroll.scrollHeight;
+      }
    }
 });
 

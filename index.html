@@ -101,7 +101,7 @@
 
                </header>
                <!-- chat -->
-<!------------><main class="cont-right-center" >
+<!------------><main class="cont-right-center" ref="pageScroll">
 
                   <div v-for="(contact, index) in contacts[chatAttiva].messaggi" :class="contact.mioMessaggio == true ? 'msg-inviato' : 'msg-ricevuto'">
                   <!-- data/orario msg -->
