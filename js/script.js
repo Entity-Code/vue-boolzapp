@@ -27,6 +27,7 @@ var app = new Vue({
          {
             nome: "Gianluigi",
             msg: "ciao Anna...",
+            accesso: currentTime(),
             img:"img/avatar_3.jpg",
             messaggi: [
             {
@@ -40,7 +41,7 @@ var app = new Vue({
                mioMessaggio: false
             },
             {
-               testo: "ciao anna sono andata a fare la spesa a dopo ciao",
+               testo: "a dopo",
                data: "23/11/2020 16:11:43",
                mioMessaggio: true,
             },
@@ -52,6 +53,7 @@ var app = new Vue({
          {
             nome: "Francesca",
             msg: "ok",
+            accesso: currentTime(),
             img:"img/avatar_4.jpg",
             messaggi: [
             {
@@ -72,6 +74,7 @@ var app = new Vue({
          {
             nome: "Luigi",
             msg: "si sono t...?",
+            accesso: currentTime(),
             img:"img/avatar_5.jpg",
             messaggi: [
             {
@@ -91,6 +94,7 @@ var app = new Vue({
 
          {
             nome: "Mario",
+            accesso: currentTime(),
             msg: "solo se t...",
             img:"img/avatar_6.jpg",
             messaggi: [
@@ -122,7 +126,7 @@ var app = new Vue({
             // creo l'oggetto myMessage (messaggio inserito dall'utente)
             let myMessage = {
                testo: this.myMessage,
-               data: dateTime,
+               data: currentTime(),
                mioMessaggio: true
             }
 
@@ -141,8 +145,8 @@ var app = new Vue({
       addBotMessage: function () {
          // oggetto risposta bot
          let myMessage = {
-            testo: "ok",
-            data: dateTime,
+            testo: randomAnswer(),
+            data: currentTime(),
             mioMessaggio:false
          }
 
@@ -155,12 +159,12 @@ var app = new Vue({
         // ciclo la lista contatti
         this.contacts.forEach((contact, i) => {
           let string = this.filtra;
-          let nome = contact.nome
+          let nome = contact.nome;
           // converto in minuscolo
           string = string.toLowerCase();
           nome = nome.toLowerCase();
 
-          // se la stringa è contenuta nel nome
+          // se la stringa è contenuta nel nome inserito
           if (nome.includes(string)) {
             contact.filtered = true;
           } else { // altrimenti
@@ -170,14 +174,31 @@ var app = new Vue({
       },
 
       // mantenimento dello scroll in basso
-      pageScroll: function() {
+      pageScroll: function () {
         this.$refs.pageScroll.scrollTop = this.$refs.pageScroll.scrollHeight;
       }
    }
 });
 
 // calcolo tempo corrente
-var today = new Date();
-var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-var dateTime = date+' '+time;
+function currentTime() {
+   function zero(minuto) {
+      if (minuto < 10) {
+         minuto = "0" + minuto;
+      }
+      return minuto;
+   }
+
+   var today = new Date();
+   var date = zero(today.getFullYear())+ '-' +(zero(today.getMonth()+1)) + '-' + zero(today.getDate());
+   var time = zero(today.getHours()) + ":" + zero(today.getMinutes()) + ":" + zero(today.getSeconds());
+   var dateTime = date+' '+time;
+   return dateTime;
+}
+
+
+function randomAnswer() {
+   var randomPosition = Math.floor(Math.random() * 26);
+   var answers = ["Hey come va?","Come ti butta?","Tutto bene grazie, a te?","Ti stavo cercando, dov'eri finito?","Non ho idea di come tu possa essere diventato così","Ho preso la lode ! Sono entusiasta!","In che senso? 🙈","Ah capito, e la famiglia come va?","Tutto okay, che si dice dalle tue parti?","COSA HAI DETTO DI MIA MADRE????","SE TI TROVO... SE TI TROVO TI riempio di bacetti 	🤬","D'accordo, se proprio insisti...","La smetti di scrivere ad un bot?","Perché ti sto rispondendo dopo quello che mi hai fatto?","Hey... mi fai uscire da questa chat? dove mi trovo????? 😳","Mi sa che ho preso il raffreddore uscendo ieri sera...","Va bene ma fa attenzione!","Andrà tutto bene, credi in te stesso ^^","Fatti forza, nessuno è nato imparato! se vuoi puoi 😀","Come sta andando il corso?","Ti voglio bene, non mollare mai ❤️","Io vado a nanna, notte notte 💤❤️","Non dimenticarti mai chi sei 💋","Dovresti provare a scrivere ad una persona reale ogni tanto 👁️‍🗨️","E' proprio carino questo vue! 'easy-to-use'😀","Io avrei qualche dubbio sul sesso di Mario... 🤨"];
+   return answers[randomPosition];
+}
