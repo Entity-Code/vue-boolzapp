@@ -8,7 +8,7 @@
       <link rel="shortcut icon" href="img/favicon.ico" />
       <title>Matthsapp Web</title>
    </head>
-   <body>  <!-- le < - - -  > affianco i tag sono dei segnaposto -->
+   <body>
 
       <!-- istanza vue -->
       <div id="app">
@@ -62,10 +62,8 @@
                   </div>
                </div>
 
-
-
                <!-- parte scorribile (contatti) -->
-<!------------><div class="cont-left-bot">
+               <div class="cont-left-bot">
                   <!-- contatto -->
                   <div class="left-bot r-one" v-for="(contact, index) in contacts" @click="cambiaChat(index)" :class="{selezionato: index === chatAttiva}" v-if="contact.filtered">
                      <img class="img1" :src="contacts[index].img" >
@@ -76,7 +74,6 @@
                      <!-- ultimo accesso -->
                      <div class="accesso">{{contacts[index].accesso}}</div>
                   </div>
-
                </div>
             </div>
             <!-- LEFT -> contatti -->
@@ -103,19 +100,17 @@
 
                </header>
                <!-- chat -->
-<!------------><main class="cont-right-center" ref="pageScroll">
+               <main class="cont-right-center" ref="pageScroll">
 
                   <div v-for="(contact, index) in contacts[chatAttiva].messaggi" :class="contact.mioMessaggio == true ? 'msg-inviato' : 'msg-ricevuto'">
                   <!-- data/orario msg -->
                   {{contact.testo}}
                   <span class="data-ora">{{contact.data}}</span>
-
                   </div>
-
                </main>
 
                <!-- scrivi messaggio -->
-<!------------><footer class="cont-right-bot">
+               <footer class="cont-right-bot">
                   <i class="far fa-smile"></i>
 
                   <input v-on:keydown.13="addMyMessage" v-model="myMessage" class="write-msg" type="text" placeholder="Scrivi un messaggio">
@@ -126,9 +121,6 @@
             <!-- RIGHT -> chat -->
          </main>
          <!-- fine total-container app -->
-
-
-
       </div>
       <!-- fine istanza vue -->
 

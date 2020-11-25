@@ -9,7 +9,6 @@
    html{overflow:hidden;}
    img{width: 100%; height: auto;}
 
-
    .selezionato{background-color: #e9ebeb;}
    /* classi js */
 
@@ -35,7 +34,6 @@
    }
 
 
-
 /* background */
    .background-container{
       width: 100vw;
@@ -55,9 +53,6 @@
          background: linear-gradient(180deg, rgba(220,219,208,1) 1%, rgba(208,219,219,1) 57%);
       }
 /* background */
-
-
-
 
 /* total container */
    .total-container{
@@ -208,8 +203,6 @@
                }
    /* left/contatti */
 
-
-
    /* right/chat */
       .container-right{
          width: 65%;
@@ -333,7 +326,6 @@
             }
    /* right/chat */
 /* fine total-container app */
-
 
 
 /* media query */
