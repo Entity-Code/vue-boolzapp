@@ -55,7 +55,8 @@
                   <div class="left-top l-three">
                      <div class="search-chat-cont">
                         <i class="fas fa-search icons"></i>
-                        <input class="search-chat" type="text" placeholder="Cerca o inizia una nuova chat">
+                        <!-- filtraggio contatti -->
+                        <input class="search-chat" type="text" v-model="filtra" @input="filtraggio()" placeholder="Cerca o inizia una nuova chat">
                      </div>
                   </div>
                </div>
@@ -65,7 +66,7 @@
                <!-- parte scorribile (contatti) -->
 <!------------><div class="cont-left-bot">
                   <!-- contatto -->
-                  <div class="left-bot r-one" v-for="(contact, index) in contacts" @click="cambiaChat(index)" :class="{selezionato: index === chatAttiva}">
+                  <div class="left-bot r-one" v-for="(contact, index) in contacts" @click="cambiaChat(index)" :class="{selezionato: index === chatAttiva}" v-if="contact.filtered">
                      <img class="img1" :src="contacts[index].img" >
                      <div class="name-left">
                         <h5>{{contacts[index].nome}}</h5>

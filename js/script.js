@@ -19,12 +19,14 @@ var app = new Vue({
       },
       // myMessage
       myMessage: "",
+      //filtraggio
+      filtra: "",
       // sx contacts
       chatAttiva: 0,
       contacts:[
          {
             nome: "Gianluigi",
-            msg: "ok d'accor...",
+            msg: "ciao Anna...",
             img:"img/avatar_3.jpg",
             messaggi: [
             {
@@ -41,14 +43,15 @@ var app = new Vue({
                testo: "ciao anna sono andata a fare la spesa a dopo ciao",
                data: "23/11/2020 16:11:43",
                mioMessaggio: true,
-            }
-           ]
+            },
+            ],
+            filtered: true
          },
 
 
          {
             nome: "Francesca",
-            msg: "Va bene a d...",
+            msg: "ok",
             img:"img/avatar_4.jpg",
             messaggi: [
             {
@@ -61,13 +64,14 @@ var app = new Vue({
                data: "27/10/2020 11:14:52",
                mioMessaggio: false
             }
-           ]
+            ],
+            filtered: true
          },
 
 
          {
             nome: "Luigi",
-            msg: "Luisa? baff...",
+            msg: "si sono t...?",
             img:"img/avatar_5.jpg",
             messaggi: [
             {
@@ -81,16 +85,17 @@ var app = new Vue({
                data: "23/11/2020 18:11:51",
                mioMessaggio: true
             }
-           ]
+            ],
+            filtered: true
          },
 
          {
             nome: "Mario",
-            msg: "si ok ciao c...",
+            msg: "solo se t...",
             img:"img/avatar_6.jpg",
             messaggi: [
             {
-               testo: "papà mi comprI il nuovo cellulare?",
+               testo: "papà mi compri il nuovo cellulare?",
                data: "23/11/2020 10:34:21",
                mioMessaggio: true
             },
@@ -99,7 +104,8 @@ var app = new Vue({
                data: "9/9/2020 10:32:43",
                mioMessaggio: false
             }
-           ]
+           ],
+           filtered: true
          }
       ]
    },
@@ -143,6 +149,24 @@ var app = new Vue({
          this.contacts[this.chatAttiva].messaggi.push(myMessage);
          //scroll down
          setTimeout(this.pageScroll, 0);
+      },
+
+      filtraggio: function(){
+        // ciclo la lista contatti
+        this.contacts.forEach((contact, i) => {
+          let string = this.filtra;
+          let nome = contact.nome
+          // converto in minuscolo
+          string = string.toLowerCase();
+          nome = nome.toLowerCase();
+
+          // se la stringa è contenuta nel nome
+          if (nome.includes(string)) {
+            contact.filtered = true;
+          } else { // altrimenti
+            contact.filtered = false;
+          }
+        });
       },
 
       // mantenimento dello scroll in basso
