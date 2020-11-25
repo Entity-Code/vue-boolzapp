@@ -182,11 +182,13 @@ var app = new Vue({
 
 // calcolo tempo corrente
 function currentTime() {
-   function zero(minuto) {
-      if (minuto < 10) {
-         minuto = "0" + minuto;
+   // aggiunge lo 0 prima della cifra, se quest'ultima è < 10
+   //Es: 8/3/2020 16:8:3 -> 08/03/2020 16:08:03
+   function zero(time) {
+      if (time < 10) {
+         time = "0" + time;
       }
-      return minuto;
+      return time;
    }
 
    var today = new Date();
@@ -196,7 +198,7 @@ function currentTime() {
    return dateTime;
 }
 
-
+// generazione frase casuale del bot
 function randomAnswer() {
    var randomPosition = Math.floor(Math.random() * 26);
    var answers = ["Hey come va?","Come ti butta?","Tutto bene grazie, a te?","Ti stavo cercando, dov'eri finito?","Non ho idea di come tu possa essere diventato così","Ho preso la lode ! Sono entusiasta!","In che senso? 🙈","Ah capito, e la famiglia come va?","Tutto okay, che si dice dalle tue parti?","COSA HAI DETTO DI MIA MADRE????","SE TI TROVO... SE TI TROVO TI riempio di bacetti 	🤬","D'accordo, se proprio insisti...","La smetti di scrivere ad un bot?","Perché ti sto rispondendo dopo quello che mi hai fatto?","Hey... mi fai uscire da questa chat? dove mi trovo????? 😳","Mi sa che ho preso il raffreddore uscendo ieri sera...","Va bene ma fa attenzione!","Andrà tutto bene, credi in te stesso ^^","Fatti forza, nessuno è nato imparato! se vuoi puoi 😀","Come sta andando il corso?","Ti voglio bene, non mollare mai ❤️","Io vado a nanna, notte notte 💤❤️","Non dimenticarti mai chi sei 💋","Dovresti provare a scrivere ad una persona reale ogni tanto 👁️‍🗨️","E' proprio carino questo vue! 'easy-to-use'😀","Io avrei qualche dubbio sul sesso di Mario... 🤨"];
