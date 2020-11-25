@@ -26,7 +26,7 @@ var app = new Vue({
       contacts:[
          {
             nome: "Gianluigi",
-            msg: "ciao Anna...",
+            msg: "a dopo",
             accesso: currentTime(),
             img:"img/avatar_3.jpg",
             messaggi: [
